@@ -11,14 +11,7 @@ fi
 
 # List of npm packages to install
 NPM_PACKAGES=(
-  react-native-gesture-handler
-  react-navigation
-  react-native-reanimated
-  react-native-vector-icons
   axios
-  @react-navigation/native
-  @react-navigation/native-stack
-  @react-navigation/bottom-tabs
 )
 
 # Temporary directory for cloning
