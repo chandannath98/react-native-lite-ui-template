@@ -11,7 +11,14 @@ fi
 
 # List of npm packages to install
 NPM_PACKAGES=(
+  react-native-gesture-handler
+  react-navigation
+  react-native-reanimated
+  react-native-vector-icons
   axios
+  @react-navigation/native
+  @react-navigation/native-stack
+  @react-navigation/bottom-tabs
 )
 
 # Temporary directory for cloning
@@ -38,9 +45,9 @@ cp -r "$TEMP_DIR/src" "$PROJECT_DIR/src"
 # Cleanup temp directory
 rm -rf "$TEMP_DIR"
 
-# Install predefined npm packages
+# Install predefined npm packages with --legacy-peer-deps
 echo "Installing npm packages..."
-npm install ${NPM_PACKAGES[@]}
+npm install ${NPM_PACKAGES[@]} --legacy-peer-deps
 
 # If iOS exists, run pod install
 if [ -d "ios" ]; then
