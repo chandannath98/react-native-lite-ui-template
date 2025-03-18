@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Define repository and branch
-GITHUB_REPO="https://github.com/chandannath98/react-native-update-to-lite-ui/main"
+GITHUB_REPO="https://github.com/chandannath98/react-native-lite-ui-template.git/main"
 PROJECT_DIR=$(pwd) # Assume script runs inside the project directory
 
 echo "Updating App.tsx from GitHub..."
