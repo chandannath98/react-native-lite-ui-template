@@ -1,8 +1,0 @@
-{
-    "name": "react-native-lite-ui-template",
-    "version": "1.0.0",
-    "scripts": {
-      "postinstall": "./scripts/postInstall.sh"
-    }
-  }
-   
