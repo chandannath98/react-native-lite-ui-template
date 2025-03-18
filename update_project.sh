@@ -19,6 +19,7 @@ NPM_PACKAGES=(
   react-native-gesture-handler
   react-native-reanimated
   react-native-screens
+  react-native-lite-ui
 )
 
 # Temporary directory for cloning
@@ -41,6 +42,20 @@ rm -rf "$PROJECT_DIR/src"
 
 echo "Copying updated src folder..."
 cp -r "$TEMP_DIR/src" "$PROJECT_DIR/src"
+
+echo "Replacing babel.config.js..."
+cp -f "$TEMP_DIR/babel.config.js" "$PROJECT_DIR/babel.config.js"
+
+# Update android/app/build.gradle (adds a new line at the end)
+BUILD_GRADLE_FILE="$PROJECT_DIR/android/app/build.gradle"
+NEW_LINE="YOUR_NEW_CONFIG_HERE"
+
+if ! grep -qF "$NEW_LINE" "$BUILD_GRADLE_FILE"; then
+  echo "Updating build.gradle..."
+  echo -e "\n$NEW_LINE" >> "$BUILD_GRADLE_FILE"
+else
+  echo "build.gradle already contains the required line."
+fi
 
 # Cleanup temp directory
 rm -rf "$TEMP_DIR"
