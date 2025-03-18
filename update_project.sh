@@ -15,7 +15,6 @@ NPM_PACKAGES=(
   react-navigation
   react-native-reanimated
   react-native-vector-icons
-  react-query
   axios
   @react-navigation/native
   @react-navigation/native-stack
