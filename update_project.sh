@@ -9,6 +9,20 @@ if [[ -z "$GITHUB_REPO" ]]; then
   exit 1
 fi
 
+# List of npm packages to install
+NPM_PACKAGES=(
+  react-native-gesture-handler
+  react-navigation
+  react-native-reanimated
+  react-native-vector-icons
+  react-query
+  axios
+  @react-navigation/native
+  @react-navigation/native-stack
+  @react-navigation/bottom-tabs
+)
+
+# Temporary directory for cloning
 TEMP_DIR=$(mktemp -d)
 PROJECT_DIR=$(pwd)
 
@@ -29,7 +43,17 @@ rm -rf "$PROJECT_DIR/src"
 echo "Copying updated src folder..."
 cp -r "$TEMP_DIR/src" "$PROJECT_DIR/src"
 
-# Cleanup
+# Cleanup temp directory
 rm -rf "$TEMP_DIR"
 
-echo "Update completed successfully!"
+# Install predefined npm packages
+echo "Installing npm packages..."
+npm install ${NPM_PACKAGES[@]}
+
+# If iOS exists, run pod install
+if [ -d "ios" ]; then
+  echo "Running pod install for iOS..."
+  cd ios && pod install && cd ..
+fi
+
+echo "Update and package installation completed successfully!"
