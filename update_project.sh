@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Prompt user for the GitHub repository URL
-read -p "Enter the raw GitHub repository URL (e.g., https://raw.githubusercontent.com/your-username/your-repo/main): " GITHUB_REPO
+read -p "Enter the GitHub repository URL (e.g., https://github.com/your-username/your-repo.git): " GITHUB_REPO
 
 # Validate input
 if [[ -z "$GITHUB_REPO" ]]; then
@@ -9,16 +9,27 @@ if [[ -z "$GITHUB_REPO" ]]; then
   exit 1
 fi
 
-PROJECT_DIR=$(pwd) # Assume script runs inside the project directory
+TEMP_DIR=$(mktemp -d)
+PROJECT_DIR=$(pwd)
 
-echo "Updating App.tsx from GitHub..."
-curl -s -o "$PROJECT_DIR/App.tsx" "$GITHUB_REPO/App.tsx"
+echo "Cloning repository..."
+git clone --depth=1 "$GITHUB_REPO" "$TEMP_DIR"
+
+if [[ $? -ne 0 ]]; then
+  echo "Error: Failed to clone repository."
+  exit 1
+fi
+
+echo "Updating App.tsx..."
+cp -f "$TEMP_DIR/App.tsx" "$PROJECT_DIR/App.tsx"
 
 echo "Removing existing src folder..."
 rm -rf "$PROJECT_DIR/src"
 
-echo "Downloading updated src folder..."
-mkdir -p "$PROJECT_DIR/src"
-wget -q -r -np -nH --cut-dirs=2 --reject "index.html*" "$GITHUB_REPO/src/" -P "$PROJECT_DIR/src"
+echo "Copying updated src folder..."
+cp -r "$TEMP_DIR/src" "$PROJECT_DIR/src"
+
+# Cleanup
+rm -rf "$TEMP_DIR"
 
 echo "Update completed successfully!"
