@@ -1,7 +1,14 @@
 #!/bin/bash
 
-# Define repository and branch
-GITHUB_REPO="https://github.com/chandannath98/react-native-lite-ui-template.git/main"
+# Prompt user for the GitHub repository URL
+read -p "Enter the raw GitHub repository URL (e.g., https://raw.githubusercontent.com/your-username/your-repo/main): " GITHUB_REPO
+
+# Validate input
+if [[ -z "$GITHUB_REPO" ]]; then
+  echo "Error: Repository URL cannot be empty."
+  exit 1
+fi
+
 PROJECT_DIR=$(pwd) # Assume script runs inside the project directory
 
 echo "Updating App.tsx from GitHub..."
