@@ -28,6 +28,7 @@ NPM_PACKAGES=(
   @react-navigation/stack
   react-native-safe-area-context
   @react-navigation/bottom-tabs
+  @react-navigation/drawer
 )
 
 # Temporary directory for cloning

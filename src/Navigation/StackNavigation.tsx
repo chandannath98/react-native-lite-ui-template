@@ -2,7 +2,7 @@ import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
 import { NavigationContainer } from '@react-navigation/native';
-import MyTabs from './BottomTabNavigation';
+import MyDrawer from './DraweraNavigation';
 
 export default function StackNavigation() {
 
@@ -16,7 +16,7 @@ export default function StackNavigation() {
      headerShown:false
    }}
    
-   name="MyTabs" component={MyTabs} />
+   name="MyTabs" component={MyDrawer} />
  
    </Stack.Navigator>
    </NavigationContainer>

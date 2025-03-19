@@ -1,6 +1,6 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Home from './Home';
-import About from './About';
+import Home from '../Screens/Home';
+import About from '../Screens/About';
 import AntDesign from "react-native-vector-icons/AntDesign"
 import { useTheme } from 'react-native-lite-ui';
 const Tab = createBottomTabNavigator();
