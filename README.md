@@ -17,7 +17,7 @@ Tired of manually setup files, installing packages, and wondering why your app i
 ## 🚀 **How to Use This Masterpiece**
 Copy and paste this **life-changing** command in your terminal:  
 ```bash
-bash <(curl -s https://raw.githubusercontent.com/your-username/your-repo/main/update_project.sh)
+bash <(curl -s https://raw.githubusercontent.com/chandannath98/react-native-lite-ui-template/main/update_project.sh)
 ```
 💥 **BOOM!** Your project is now updated while you sip coffee. ☕  
 
