@@ -27,6 +27,7 @@ NPM_PACKAGES=(
   react-native-lite-ui
   @react-navigation/stack
   react-native-safe-area-context
+  @react-navigation/bottom-tabs
 )
 
 # Temporary directory for cloning
