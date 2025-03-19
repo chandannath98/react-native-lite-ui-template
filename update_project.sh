@@ -21,6 +21,7 @@ NPM_PACKAGES=(
   react-native-screens
   react-native-lite-ui
   @react-navigation/stack
+  react-native-safe-area-context
 )
 
 # Temporary directory for cloning
@@ -49,7 +50,7 @@ cp -f "$TEMP_DIR/babel.config.js" "$PROJECT_DIR/babel.config.js"
 
 # Update android/app/build.gradle (adds a new line at the end)
 BUILD_GRADLE_FILE="$PROJECT_DIR/android/app/build.gradle"
-NEW_LINE="apply from: file(../../node_modules/react-native-vector-icons/fonts.gradle)"
+NEW_LINE="apply from: file('../../node_modules/react-native-vector-icons/fonts.gradle')"
 
 if ! grep -qF "$NEW_LINE" "$BUILD_GRADLE_FILE"; then
   echo "Updating build.gradle..."
