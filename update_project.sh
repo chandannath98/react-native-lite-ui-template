@@ -20,6 +20,7 @@ NPM_PACKAGES=(
   react-native-reanimated
   react-native-screens
   react-native-lite-ui
+  @react-navigation/stack
 )
 
 # Temporary directory for cloning
