@@ -1,12 +1,17 @@
 #!/bin/bash
 
 # Prompt user for the GitHub repository URL
-read -p "Enter the GitHub repository URL (e.g., https://github.com/your-username/your-repo.git): " GITHUB_REPO
 
-# Validate input
-if [[ -z "$GITHUB_REPO" ]]; then
-  echo "Error: Repository URL cannot be empty."
-  exit 1
+
+GITHUB_REPO="https://github.com/chandannath98/react-native-lite-ui-template.git"
+
+
+echo "🚨 WARNING: This script will replace your existing App.tsx, src/ folder, and babel.config.js. 🚨"
+read -p "Are you sure you want to proceed? (yes/no): " confirmation
+
+if [[ "$confirmation" != "yes" ]]; then
+    echo "❌ Operation canceled."
+    exit 1
 fi
 
 # List of npm packages to install
@@ -64,7 +69,7 @@ rm -rf "$TEMP_DIR"
 
 # Install predefined npm packages with --legacy-peer-deps
 echo "Installing npm packages..."
-npm install ${NPM_PACKAGES[@]} --legacy-peer-deps
+npm install ${NPM_PACKAGES[@]} 
 
 # If iOS exists, run pod install
 if [ -d "ios" ]; then
