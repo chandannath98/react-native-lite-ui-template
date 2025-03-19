@@ -3,7 +3,7 @@ import React from 'react'
 import { GestureHandlerRootView } from 'react-native-gesture-handler'
 import { ThemeProvider } from 'react-native-lite-ui';
 import { ThemeInitialValues } from 'react-native-lite-ui/src/ThemeContext';
-import StackNavigation from './Navigations/StackNavigation';
+import StackNavigation from './src/Navigation/StackNavigation';
 
 export default function App() {
    const theme:ThemeInitialValues = {
