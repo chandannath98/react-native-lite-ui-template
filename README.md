@@ -1,16 +1,19 @@
-# 🚀 **The Ultimate Project Auto-Setup** 🛠️  
+# 🚀 **The Ultimate React Native Project Auto-Setup Tool** 🛠️  
 
 > **"Setup your React Native project so you don’t have to do the old boring things!"** 🎉  
 
 ## 📌 **What This Magical Script Does**  
 Tired of manually setup files, installing packages, and wondering why your app is still broken? Worry no more! This script will:  
 
+✅ **Install necessary npm packages** (With zero regard for dependency conflicts 🤖)  
 ✅ **Replace your `App.tsx`** (Goodbye, old code!)  
 ✅ **Nuke and replace your `src/` folder** (No survivors!)  
+✅ **Setup Stack Navigation** (Every project need navigation 👀)  
+✅ **Setup `react-native-lite-ui`** (The best package to manage theming and global fonts 🤭)  
 ✅ **Overwrite your `babel.config.js`** (Because why not?)  
 ✅ **Modify your `android/app/build.gradle`** (Adding top-secret lines of code 👀)  
-✅ **Install necessary npm packages** (With zero regard for dependency conflicts 🤖)  
 ✅ **Run `pod install` for iOS** (Because Xcode will throw tantrums if you don’t.)  
+
 
 ---
 
@@ -28,12 +31,14 @@ bash <(curl -s https://raw.githubusercontent.com/chandannath98/react-native-lite
 💀 **Your `src/` folder? Replaced.**  
 🛑 **Your `babel.config.js`? Gone.**  
 💅 **Your build.gradle? Tweaked like a beauty filter.**  
+🛑 **Some package issues can be occur so be ready to fix them and also don't forget inform us**  
+
 
 ---
 
 ## 🤔 **Why Use This?**  
 - **You’re lazy.** (No judgment, we get it.)  
-- **Your project is outdated, and you don’t know why.**  
+- **You want to setup your project in minutes instead of hours.**  
 - **You enjoy living on the edge by running scripts from the internet.**  
 - **You want to impress your teammates with an “automated workflow.”**  
 

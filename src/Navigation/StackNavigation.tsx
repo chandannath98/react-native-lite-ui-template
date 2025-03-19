@@ -2,8 +2,7 @@ import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
 import { NavigationContainer } from '@react-navigation/native';
-import Home from '../Screens/Home';
-import About from '../Screens/About';
+import MyTabs from './BottomTabNavigation';
 
 export default function StackNavigation() {
 
@@ -11,12 +10,16 @@ export default function StackNavigation() {
 
   return (
     <NavigationContainer>
-   <Stack.Navigator>
-  <Stack.Screen name="Home" component={Home} />
-  <Stack.Screen name="About" component={About} />
-
-  </Stack.Navigator>
-  </NavigationContainer>
+    <Stack.Navigator>
+   <Stack.Screen 
+   options={{
+     headerShown:false
+   }}
+   
+   name="MyTabs" component={MyTabs} />
+ 
+   </Stack.Navigator>
+   </NavigationContainer>
   )
 }
 
