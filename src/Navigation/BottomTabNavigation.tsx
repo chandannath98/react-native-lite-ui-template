@@ -10,7 +10,13 @@ export default function MyTabs() {
     const {colors} =useTheme()
 
   return (
-    <Tab.Navigator>
+    <Tab.Navigator
+    screenOptions={{
+      tabBarStyle:{
+        backgroundColor:colors.backgroundColor
+      }
+    }}
+    >
       <Tab.Screen 
       options={{
         headerShown:false,

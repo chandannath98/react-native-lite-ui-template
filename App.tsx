@@ -8,22 +8,23 @@ import StackNavigation from './src/Navigation/StackNavigation';
 export default function App() {
    const theme:ThemeInitialValues = {
       colors:{
-        primary: 'purple',
-        secondary: "gray",
-        backgroundColor: "blue",
-        textColor: "gray"
+        primary: '#03DAC6',
+        backgroundColor: '#FFFFFF',
+        textColor: '#000',
+        buttonColor: '#03DAC6',
+        disabledColor: '#A9A9A9',
         // buttonColor: "yellow"
         
     },themesColors: {
       light: {
-        primary: '#6200EE',
+        primary: '#03DAC6',
         backgroundColor: '#FFFFFF',
         textColor: '#000',
         buttonColor: '#03DAC6',
         disabledColor: '#A9A9A9',
       },
       dark: {
-        primary: '#BB86FC',
+        primary: '#03DAC6',
         backgroundColor: '#121212',
         textColor: '#FFFFFF',
         buttonColor: '#03DAC6',
